@@ -42,6 +42,7 @@ export class NavComponent {
   
   navLinks = [
     { href: "#about", label: "about" },
+    { href: "#terminal", label: "terminal" },
     { href: "#github", label: "github" },
     { href: "#experience", label: "experience" },
     { href: "#education", label: "edu" },

@@ -11,6 +11,7 @@ import { HatchComponent } from '../../components/hatch/hatch.component';
 import { SectionComponent } from '../../components/section/section.component';
 import { EducationComponent } from '../../components/education/education.component';
 import { CertificationsComponent } from '../../components/certifications/certifications.component';
+import { TerminalSectionComponent } from '../../components/terminal-section/terminal-section.component';
 import { MetaService } from '../../services/meta.service';
 
 @Component({
@@ -29,6 +30,7 @@ import { MetaService } from '../../services/meta.service';
     SectionComponent,
     EducationComponent,
     CertificationsComponent,
+    TerminalSectionComponent,
 ],
   template: `
     <main>
@@ -41,63 +43,71 @@ import { MetaService } from '../../services/meta.service';
         <app-about></app-about>
       </app-section>
 
-      @defer (on viewport) {
-        <app-section id="github">
+      <app-section id="terminal">
+        @defer (on viewport) {
+          <app-terminal-section></app-terminal-section>
+        } @placeholder {
+          <div class="h-80 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
+
+      <app-section id="github">
+        @defer (on viewport) {
           <app-github-section></app-github-section>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-64 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
 
-      @defer (on viewport) {
-        <app-section id="projects">
+      <app-section id="projects">
+        @defer (on viewport) {
           <app-projects></app-projects>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-96 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
 
-      @defer (on viewport) {
-        <app-section id="skills">
+      <app-section id="skills">
+        @defer (on viewport) {
           <app-skills></app-skills>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
 
-      @defer (on viewport) {
-        <app-section id="experience">
+      <app-section id="experience">
+        @defer (on viewport) {
           <app-experience></app-experience>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-96 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
 
-      @defer (on viewport) {
-        <app-section id="education">
+      <app-section id="education">
+        @defer (on viewport) {
           <app-education></app-education>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
 
-      @defer (on viewport) {
-        <app-section id="certifications">
+      <app-section id="certifications">
+        @defer (on viewport) {
           <app-certifications></app-certifications>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
 
       <app-hatch></app-hatch>
 
-      @defer (on viewport) {
-        <app-section id="contact">
+      <app-section id="contact">
+        @defer (on viewport) {
           <app-contact></app-contact>
-        </app-section>
-      } @placeholder {
-        <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
-      }
+        } @placeholder {
+          <div class="h-40 bg-muted/20 animate-pulse m-6"></div>
+        }
+      </app-section>
     </main>
   `,
   styles: []
