@@ -141,4 +141,15 @@ export class ApiService {
       })
     );
   }
+
+  sendMessage(data: { name: string, email: string, message: string }): Observable<any> {
+    return from(
+      this.supabase.from('messages').insert([data])
+    ).pipe(
+      map(res => {
+        if (res.error) throw res.error;
+        return res.data;
+      })
+    );
+  }
 }
