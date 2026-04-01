@@ -35,7 +35,7 @@ export class MetaService {
     this.meta.updateTag({ property: 'og:title', content: siteTitle });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://nader-portfolio.vercel.app/' }); // Update with real URL later
+    this.meta.updateTag({ property: 'og:url', content: 'https://nader035dev.vercel.app/' });
     this.meta.updateTag({ property: 'og:site_name', content: `${p.name} Portfolio` });
 
     // Twitter
