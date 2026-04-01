@@ -1,0 +1,105 @@
+{
+  "profile": {
+    "name": "Nader El-Sayed",
+    "role": "Frontend Developer",
+    "initials": "NE",
+    "location": "Cairo, Egypt",
+    "phone": "+20 10 221 753 16",
+    "email": "naderas109@gmail.com",
+    "github": "https://github.com/nader035",
+    "linkedin": "https://linkedin.com/in/nader0305"
+  },
+  "about": {
+    "paragraphs": [
+      "I am a dedicated Front-End Developer focused on crafting intuitive and highly interactive web experiences. I bridge the gap between design and development, ensuring that every digital solution I build is smooth, responsive, and engaging down to the smallest detail. Driven by a continuous desire to grow, I am always exploring new web technologies to deliver top-tier code quality. I view frontend development not just as writing code, but as building powerful communication tools that help businesses and individuals succeed. That purpose is the foundation of my work and my ultimate motivation."
+    ]
+  },
+  "skills": [
+    {
+      "id": "1",
+      "label": "Front-End",
+      "items": ["HTML5", "CSS3", "Bootstrap", "JavaScript (ES6+)", "Angular"]
+    },
+    {
+      "id": "2",
+      "label": "Back-end",
+      "items": ["Node.js (Basics)", "Express.js", "MongoDB", "MySQL", "RESTful APIs"]
+    },
+    {
+      "id": "3",
+      "label": "UI/UX Design",
+      "items": ["Figma", "Design Systems", "Layout & Visual Design"]
+    },
+    {
+      "id": "4",
+      "label": "Core Concepts",
+      "items": ["Problem Solving", "Data Structures", "Algorithms"]
+    },
+    {
+      "id": "5",
+      "label": "Soft Skills",
+      "items": ["Teamwork", "Research", "Time Management", "Communication"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "riwaq",
+      "status": "Live",
+      "year": "2026",
+      "desc": "A social productivity sanctuary built with Angular and Supabase. Features real-time focus timers and scholarship presence.",
+      "tags": ["Angular", "Supabase", "GSAP", "Tailwind"],
+      "repo": "https://github.com/nader035/riwaq",
+      "live": "https://riwaq-app.web.app/"
+    },
+    {
+      "id": "2",
+      "name": "marsa-ai",
+      "status": "Live",
+      "year": "2026",
+      "desc": "AI engine integration for advanced retrieval and chat capabilities using modern LLMs.",
+      "tags": ["TypeScript", "DeepSeek", "Angular", "Vercel"],
+      "repo": "https://github.com/nader035/marsa-ai",
+      "live": "https://marsa-ai.vercel.app/"
+    }
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "company": "Instant Training center",
+      "role": "Front-end development diploma",
+      "period": "March 2025 — Present",
+      "location": "Egypt",
+      "bullets": [
+        "Focused on modern front-end technologies including Angular, TypeScript, and responsive UI design principles."
+      ],
+      "tags": ["Angular", "TypeScript", "UI Design"]
+    },
+    {
+      "id": "2",
+      "company": "Nywtk",
+      "role": "UI/UX Design Challenge",
+      "period": "July 2024 — October 2024",
+      "location": "Egypt",
+      "bullets": [
+        "Collaborated within cross-functional teams to research, design, and prototype user-centered digital solutions.",
+        "Worked through all design stages from user research and wireframing to high-fidelity prototyping in Figma while enhancing teamwork, creativity, and problem-solving skills."
+      ],
+      "tags": ["UI/UX", "Figma", "Prototyping", "User Research"]
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "degree": "Bachelor of Information Technology",
+      "school": "Minia University",
+      "location": "Minia, Egypt",
+      "period": "Expected Graduation: 2026"
+    }
+  ],
+  "certifications": [
+    { "id": "1", "name": "Nywtk Challenge Certification" },
+    { "id": "2", "name": "NTI MEAN-STACK Summer Course Certification" },
+    { "id": "3", "name": "ITI Angular Certification" }
+  ]
+}
