@@ -47,7 +47,7 @@ export class NavComponent implements OnInit, OnDestroy {
   private observer: IntersectionObserver | null = null;
   
   navLinks = [
-    { href: "#about", label: "about" },
+    { href: "#", label: "about" },
     { href: "#terminal", label: "terminal" },
     { href: "#github", label: "github" },
     { href: "#projects", label: "projects" },

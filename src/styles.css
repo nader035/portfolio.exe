@@ -61,6 +61,7 @@
 
 /* ── LIGHT MODE ─────────────────────────────────── */
 :root {
+  color-scheme: light;
   --background: 0 0% 99%;
   --foreground: 215 14% 12%;
   --border: 213 13% 85%;
@@ -102,6 +103,7 @@
 
 /* ── DARK MODE ──────────────────────────────────── */
 .dark {
+  color-scheme: dark;
   --background: 215 28% 7%;
   --foreground: 210 17% 90%;
   --border: 215 14% 18%;
@@ -138,6 +140,32 @@
   --gh-4: #39d353;
 }
 
+/* ── Global Scrollbar ────────────────────── */
+::-webkit-scrollbar {
+  width: 10px !important;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background)) !important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--border) / 0.5) !important;
+  border-radius: 10px !important;
+  border: 2px solid hsl(var(--background)) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(28 80% 52%) !important; /* Fixed Primary Orange */
+  border: none !important;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border) / 0.5) hsl(var(--background));
+}
+html:hover {
+  scrollbar-color: hsl(28 80% 52%) hsl(var(--background));
+}
+
 @layer base {
   * { box-sizing: border-box; }
 
@@ -148,6 +176,16 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Selection ───────────────────────────── */
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  ::-moz-selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
   }
 
   /* ── Hatch divider ─────────────────────────── */
@@ -163,19 +201,8 @@
       var(--hatch-line) 5px
     );
   }
-
-  /* ── Selection ───────────────────────────── */
-  ::selection {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-  }
-  ::-moz-selection {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-  }
 }
 
-/* GitHub contribution colours */
 /* GitHub contribution colours */
 .gh-cell-0 { background-color: var(--gh-0); }
 .gh-cell-1 { background-color: var(--gh-1); }
@@ -197,7 +224,6 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--accent));
 }
-
 
 /* ── Custom Cursor ─────────────────────────── */
 .custom-cursor {
