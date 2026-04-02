@@ -102,10 +102,32 @@ import { SectionComponent } from '../section/section.component';
         </div>
       </app-section>
     } @else if (store.isLoading()) {
-      <div class="animate-pulse">
-        <div class="h-48 border-b border-border bg-muted/20"></div>
-        <div class="h-32 border-b border-border bg-muted/10"></div>
-      </div>
+      <app-section>
+        <div class="flex flex-col sm:flex-row items-center gap-8 animate-pulse opacity-50">
+          <!-- Avatar Skeleton -->
+          <div class="relative w-32 h-32 bg-muted/40 border-2 border-border/50 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
+          </div>
+
+          <!-- Text Skeleton -->
+          <div class="space-y-4 w-full max-w-md">
+            <div class="h-10 sm:h-14 bg-muted/60 w-3/4"></div>
+            <div class="h-6 bg-muted/40 w-1/2"></div>
+          </div>
+        </div>
+      </app-section>
+
+      <!-- Contact Info Skeleton -->
+      <app-section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-30">
+          @for (i of [1, 2, 3, 4, 5]; track i) {
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-muted/40"></div>
+              <div class="h-4 bg-muted/30 w-32"></div>
+            </div>
+          }
+        </div>
+      </app-section>
     }
   `,
   styles: [`
