@@ -1,4 +1,5 @@
-import { Directive, ElementRef, OnInit, OnDestroy, inject, input } from '@angular/core';
+import { Directive, ElementRef, OnInit, OnDestroy, inject, input, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appScrollReveal]',
@@ -6,6 +7,7 @@ import { Directive, ElementRef, OnInit, OnDestroy, inject, input } from '@angula
 })
 export class ScrollRevealDirective implements OnInit, OnDestroy {
   private el = inject(ElementRef);
+  private platformId = inject(PLATFORM_ID);
   
   delay = input<number>(0);
   threshold = input<number>(0.1);
@@ -14,9 +16,14 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   private observer: IntersectionObserver | null = null;
 
   ngOnInit() {
-    // Initial styles
     const element = this.el.nativeElement;
+
+    // Set initial hidden state
     element.style.opacity = '0';
+    
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    // Browser-only logic
     element.style.transition = `all 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${this.delay()}ms`;
     
     const translateValue = '30px';

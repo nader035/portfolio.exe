@@ -9,7 +9,7 @@ import { ThemeService } from './services/theme.service';
   standalone: true,
   imports: [RouterOutlet, NavComponent, FooterComponent],
   template: `
-    <div class="min-h-screen relative overflow-x-hidden">
+    <div class="min-h-screen relative overflow-x-hidden pt-12">
 
       <!-- Custom Block Cursor -->
       <div #cursor class="custom-cursor"></div>
@@ -17,7 +17,9 @@ import { ThemeService } from './services/theme.service';
       <app-nav></app-nav>
 
       <!-- Content will be injected here -->
-      <router-outlet></router-outlet>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
 
       <app-footer></app-footer>
     </div>

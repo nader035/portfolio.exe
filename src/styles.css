@@ -163,6 +163,16 @@
       var(--hatch-line) 5px
     );
   }
+
+  /* ── Selection ───────────────────────────── */
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  ::-moz-selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
 }
 
 /* GitHub contribution colours */
