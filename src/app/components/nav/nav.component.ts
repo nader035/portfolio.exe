@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Sun, Moon } from 'lucide-angular';
 import { ThemeService } from '../../services/theme.service';
@@ -18,7 +18,10 @@ import { ThemeService } from '../../services/theme.service';
           @for (link of navLinks; track link.href) {
             <a
               [href]="link.href"
-              class="hidden sm:inline-block text-xs text-muted-foreground hover:text-foreground hover:bg-muted/40 border border-transparent hover:border-border px-2.5 py-1 transition-all"
+              [class]="'hidden sm:inline-block text-xs px-2.5 py-1 transition-all border ' + 
+                (activeSection() === link.href.slice(1) 
+                ? 'text-foreground bg-muted border-border' 
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/40 border-transparent hover:border-border')"
             >
               {{ link.label }}
             </a>
@@ -27,7 +30,7 @@ import { ThemeService } from '../../services/theme.service';
           <button
             (click)="themeService.toggleTheme()"
             aria-label="Toggle theme"
-            class="w-8 h-8 flex items-center justify-center border border-border hover:border-accent text-muted-foreground hover:text-foreground transition-all"
+            class="w-8 h-8 flex items-center justify-center border border-border hover:border-accent text-muted-foreground hover:text-foreground transition-all ml-2"
           >
             <i-lucide [name]="themeService.darkMode() ? 'sun' : 'moon'" [size]="14"></i-lucide>
           </button>
@@ -37,15 +40,47 @@ import { ThemeService } from '../../services/theme.service';
   `,
   styles: []
 })
-export class NavComponent {
+export class NavComponent implements OnInit, OnDestroy {
   themeService = inject(ThemeService);
+  activeSection = signal<string>('');
+  private observer: IntersectionObserver | null = null;
   
   navLinks = [
     { href: "#about", label: "about" },
     { href: "#terminal", label: "terminal" },
     { href: "#github", label: "github" },
+    { href: "#projects", label: "projects" },
     { href: "#experience", label: "experience" },
     { href: "#education", label: "edu" },
     { href: "#certifications", label: "certs" },
   ];
+
+  ngOnInit() {
+    this.initIntersectionObserver();
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
+  }
+
+  private initIntersectionObserver() {
+    const options = {
+      root: null,
+      rootMargin: '-50% 0px -40% 0px',
+      threshold: 0
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.activeSection.set(entry.target.id);
+        }
+      });
+    }, options);
+
+    this.navLinks.forEach(link => {
+      const el = document.getElementById(link.href.slice(1));
+      if (el) this.observer?.observe(el);
+    });
+  }
 }

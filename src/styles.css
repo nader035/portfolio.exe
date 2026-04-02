@@ -187,3 +187,34 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--accent));
 }
+
+
+/* ── Custom Cursor ─────────────────────────── */
+.custom-cursor {
+  width: 10px;
+  height: 18px;
+  background: hsl(var(--accent));
+  position: fixed;
+  pointer-events: none;
+  z-index: 10001;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
+  * {
+    cursor: none !important;
+  }
+}
+
+/* ── Glow Effects ───────────────────────────── */
+.text-glow {
+  text-shadow: 0 0 10px hsla(var(--accent), 0.5);
+}
+
+.border-glow {
+  box-shadow: 0 0 15px hsla(var(--accent), 0.2);
+}

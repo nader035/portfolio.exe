@@ -12,6 +12,7 @@ import { SectionComponent } from '../../components/section/section.component';
 import { EducationComponent } from '../../components/education/education.component';
 import { CertificationsComponent } from '../../components/certifications/certifications.component';
 import { TerminalSectionComponent } from '../../components/terminal-section/terminal-section.component';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { MetaService } from '../../services/meta.service';
 
 @Component({
@@ -31,19 +32,20 @@ import { MetaService } from '../../services/meta.service';
     EducationComponent,
     CertificationsComponent,
     TerminalSectionComponent,
+    ScrollRevealDirective,
 ],
   template: `
     <main>
       <!-- Profile has its own full-width internal borders -->
-      <app-profile></app-profile>
+      <app-profile appScrollReveal [delay]="100"></app-profile>
 
-      <app-hatch></app-hatch>
+      <app-hatch appScrollReveal [delay]="200"></app-hatch>
       
-      <app-section id="about">
+      <app-section id="about" appScrollReveal [delay]="300">
         <app-about></app-about>
       </app-section>
 
-      <app-section id="terminal">
+      <app-section id="terminal" appScrollReveal>
         @defer (on viewport) {
           <app-terminal-section></app-terminal-section>
         } @placeholder {
@@ -51,7 +53,7 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-section id="github">
+      <app-section id="github" appScrollReveal>
         @defer (on viewport) {
           <app-github-section></app-github-section>
         } @placeholder {
@@ -59,7 +61,7 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-section id="projects">
+      <app-section id="projects" appScrollReveal>
         @defer (on viewport) {
           <app-projects></app-projects>
         } @placeholder {
@@ -67,7 +69,7 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-section id="skills">
+      <app-section id="skills" appScrollReveal>
         @defer (on viewport) {
           <app-skills></app-skills>
         } @placeholder {
@@ -75,7 +77,7 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-section id="experience">
+      <app-section id="experience" appScrollReveal>
         @defer (on viewport) {
           <app-experience></app-experience>
         } @placeholder {
@@ -83,7 +85,7 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-section id="education">
+      <app-section id="education" appScrollReveal>
         @defer (on viewport) {
           <app-education></app-education>
         } @placeholder {
@@ -91,7 +93,7 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-section id="certifications">
+      <app-section id="certifications" appScrollReveal>
         @defer (on viewport) {
           <app-certifications></app-certifications>
         } @placeholder {
@@ -99,9 +101,9 @@ import { MetaService } from '../../services/meta.service';
         }
       </app-section>
 
-      <app-hatch></app-hatch>
+      <app-hatch appScrollReveal></app-hatch>
 
-      <app-section id="contact">
+      <app-section id="contact" appScrollReveal>
         @defer (on viewport) {
           <app-contact></app-contact>
         } @placeholder {
