@@ -1,4 +1,5 @@
-import { Component, signal, inject, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { Component, signal, inject, HostListener, ElementRef, ViewChild, PLATFORM_ID, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -26,10 +27,17 @@ import { ThemeService } from './services/theme.service';
   `,
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   @ViewChild('cursor') cursor!: ElementRef;
   protected readonly title = signal('portfolio-angular');
   themeService = inject(ThemeService);
+  private platformId = inject(PLATFORM_ID);
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo(0, 0);
+    }
+  }
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {

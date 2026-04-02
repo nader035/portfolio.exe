@@ -59,7 +59,6 @@ const RESUME_URL = 'https://gqqwlnmrlofcaqsueqdb.supabase.co/storage/v1/object/p
               (keydown.enter)="handleEnter()"
               [disabled]="isProcessing()"
               class="bg-transparent border-none outline-none flex-grow text-foreground caret-primary w-full"
-              autofocus
               aria-label="Terminal input"
               placeholder="Enter command..."
             />
