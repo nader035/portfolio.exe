@@ -10,7 +10,7 @@ import { ThemeService } from '../../services/theme.service';
   template: `
     <header class="fixed top-0 w-full z-50 border-b border-border bg-background/90 backdrop-blur-sm">
       <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between border-r border-l border-border">
-        <a href="#about" class="text-sm text-foreground hover:text-accent transition-colors">
+        <a href="#" class="text-sm text-foreground hover:text-accent transition-colors">
           <span class="text-accent">~</span>/nader035
         </a>
 
@@ -18,7 +18,7 @@ import { ThemeService } from '../../services/theme.service';
           @for (link of navLinks; track link.href) {
             <a
               [href]="link.href"
-              [class]="'hidden sm:inline-block text-[10px] uppercase font-bold tracking-tighter px-2.5 py-1 transition-all border ' + 
+              [class]="'hidden sm:inline-block text-[10px] font-bold tracking-tighter px-2.5 py-1 transition-all border ' + 
                 (activeSection() === (link.href === '#' ? 'about' : link.href.slice(1)) 
                 ? 'text-foreground bg-muted border-border' 
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/40 border-transparent hover:border-border')"
