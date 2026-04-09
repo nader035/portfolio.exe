@@ -89,14 +89,14 @@ import { SectionComponent } from '../section/section.component';
             <div class="w-10 h-10 border border-border flex items-center justify-center text-accent group-hover:border-accent group-hover:bg-accent/5 transition-all">
               <i-lucide name="github" [size]="18"></i-lucide>
             </div>
-            <span class="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate">github.com/nader035</span>
+            <span class="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate">nader035</span>
           </a>
 
           <a [href]="p.linkedin" target="_blank" class="flex items-center gap-4 group">
             <div class="w-10 h-10 border border-border flex items-center justify-center text-accent group-hover:border-accent group-hover:bg-accent/5 transition-all">
               <i-lucide name="linkedin" [size]="18"></i-lucide>
             </div>
-            <span class="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate">linkedin.com/in/nader0305</span>
+            <span class="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate">nader0305</span>
           </a>
           
         </div>
