@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nader035dev.vercel.app/sitemap.xml
+Sitemap: https://nadermohamed.dev/sitemap.xml
